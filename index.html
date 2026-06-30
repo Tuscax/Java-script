@@ -11,10 +11,37 @@
 </head>
 
 <body>
-    <main></main>
+    <main><div class="flex flex-row gap-5">
+        <form action="" class="flex flex-row gap-2.5">
+          <label for="celc">Celsius</label>
+                    <input id="celc" type="number" class="border-2 border-indigo-500 rounded-2xl bg-indigo-500 p-1">
+                    <h2>Fahrenheit</h2>
+                    <span id="traducaoC">00</span>
+                     </form>
+                      <form action="" class="flex flex-row gap-2.5">
+                        <label for="fahr">Fahrenheit</label>
+                    <input id="fahr" type="number" class="border-2 border-indigo-500 rounded-2xl bg-indigo-500 p-1">
+                    <h2>Celsius</h2>
+                    <span id="traducaoF">00</span>
+                    </form>
+                    </div>
+    </main>
     <!-- <script src="intro.js"></script> -->
-    <script src="temp.js"></script>
-    <script>console.log("aiii chavinho")
+    <!-- <script src="temp.js"></script> -->
+    <script>function traducao() {
+    const celc = Number(document.getElementById("celc").value)
+    const um = (celc*9/5) + 32 
+    console.log(um)
+    traducaoC.innerHTML = um 
+}
+document.getElementById("celc").addEventListener("input", traducao)
+function traducaoFar() {
+    const fahr = Number(document.getElementById("fahr").value)
+    const dois = (fahr-32) *5/9 
+    console.log(dois)
+    traducaoF.innerHTML = dois 
+}
+document.getElementById("fahr").addEventListener("input", traducaoFar)
     </script>
 </body>
 
